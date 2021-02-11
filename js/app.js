@@ -13,7 +13,7 @@ function load_page() {
   d3.select("body")
     .append("div")
     .attr("class", "header")
-    .html('<a href="https://www.fws.gov/northeast/fisherycenter/" target="_blank"><img id="usfws" src="annotate/images/usfws.png" title="US Fish & Wildlife Service - Northeast Fishery Center" target="_blank"></img></a><div id="headerDiv"><h1>Mitogenome Annotation</h1><div class="headerLinks"><p id="intro" class="introLink" title="Click to initiate a walkthrough highlighting the features and functions of the app">Tutorial</p><p id="resources" class="introLink" title="Click to download protocols and access contact information for questions or comments about the app">Resources</p></div></div>');
+    .html('<a href="https://www.fws.gov/northeast/fisherycenter/" target="_blank"><img id="usfws" src="images/usfws.png" title="US Fish & Wildlife Service - Northeast Fishery Center" target="_blank"></img></a><div id="headerDiv"><h1>Mitogenome Annotation</h1><div class="headerLinks"><p id="intro" class="introLink" title="Click to initiate a walkthrough highlighting the features and functions of the app">Tutorial</p><p id="resources" class="introLink" title="Click to download protocols and access contact information for questions or comments about the app">Resources</p></div></div>');
 
   d3.select("#intro").on("click", function() { startIntro(); });
   d3.select("#resources")
@@ -40,7 +40,7 @@ function load_page() {
       + '<form id="cleanForm" action="javascript:;" onsubmit="annotate(this)">'
         + '<button type="reset" id="resetBut" class="formBut btn btn-primary" title="Click to reset the form"><span class="fa fa-repeat"></span> Reset</button>'
         + '<br>'
-        + '<div class="labelDiv"><label for="gbFile">Select a GenBank flat file:</label></div><input type="file" id="gbFile" class="formInput" name="gbFile" accept=".gb" required></input><a class="fileExamp" id="gbFileExamp" href="annotate/files/NEFC_F16-005_before.gb" title="Example of a pre-edited GenBank flat file"><span class="fa fa-file"></span></a>'
+        + '<div class="labelDiv"><label for="gbFile">Select a GenBank flat file:</label></div><input type="file" id="gbFile" class="formInput" name="gbFile" accept=".gb" required></input><a class="fileExamp" id="gbFileExamp" href="files/NEFC_F16-005_before.gb" title="Example of a pre-edited GenBank flat file"><span class="fa fa-file"></span></a>'
         + '<br>'
         + '<div class="labelDiv"><label for="locus_tag">GenBank locus_tag prefix:</label></div><input type="text" id="locus_tag" class="formInput" name="locus_tag" placeholder="" title="Locus tag prefix (e.g. HUS31) received from GenBank after submittal of a BioSample to the NEFC BioProject" required></input><a class="appLink" id="bpLink" target="_blank" href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA633136" title="Link to the NEFC Freshwater Fish Mitochondrial Genome BioProject"><span class="fa fa-link"></span></a>'
         + '<br>'
@@ -74,11 +74,11 @@ function load_page() {
       +'<form action="javascript:;" onsubmit="tbl2asn(this)">'
         + '<button type="reset" id="resetButCreate" class="formBut btn btn-primary" title="Click to reset the form"><span class="fa fa-repeat"></span> Reset</button>'
         + '<br>'
-        + '<div class="labelDiv"><label for="gbTemplate">Select a GenBank template file:</label></div><input type="file" id="gbTemplate" class="fileInput formInput" name="gbTemplate" accept=".sbt" required></input><a class="fileExamp" id="gbTemplateExamp" href="annotate/files/template.sbt" title="Example of a GenBank template file"><span class="fa fa-file"></span></a><a class="appLink" id="templateLink" target="_blank" href="https://submit.ncbi.nlm.nih.gov/genbank/template/submission/" title="Link to GenBank template file creation app"><span class="fa fa-link"></span></a>'
+        + '<div class="labelDiv"><label for="gbTemplate">Select a GenBank template file:</label></div><input type="file" id="gbTemplate" class="fileInput formInput" name="gbTemplate" accept=".sbt" required></input><a class="fileExamp" id="gbTemplateExamp" href="files/template.sbt" title="Example of a GenBank template file"><span class="fa fa-file"></span></a><a class="appLink" id="templateLink" target="_blank" href="https://submit.ncbi.nlm.nih.gov/genbank/template/submission/" title="Link to GenBank template file creation app"><span class="fa fa-link"></span></a>'
         + '<br>'
-        + '<div class="labelDiv"><label for="gbFasta">Select a FASTA file:</label></div><input type="file" id="gbFasta" class="fileInput formInput" name="gbFasta" accept=".fsa" required></input><a class="fileExamp" id="gbFastaExamp" href="annotate/files/NEFC_F16-005.fsa" title="Example of a FASTA file with definition line entries"><span class="fa fa-file"></span></a>'
+        + '<div class="labelDiv"><label for="gbFasta">Select a FASTA file:</label></div><input type="file" id="gbFasta" class="fileInput formInput" name="gbFasta" accept=".fsa" required></input><a class="fileExamp" id="gbFastaExamp" href="files/NEFC_F16-005.fsa" title="Example of a FASTA file with definition line entries"><span class="fa fa-file"></span></a>'
         + '<br>'
-        + '<div class="labelDiv"><label for="gbFileCreate">Select a GenBank flat file:</label></div><input type="file" id="gbFileCreate" class="fileInput formInput" name="gbFileCreate" accept=".gb" required></input><a class="fileExamp" id="gbFileCreateExamp" href="annotate/files/NEFC_F16-005_after.gb" title="Example of a post-edited GenBank flat file"><span class="fa fa-file"></span></a>'
+        + '<div class="labelDiv"><label for="gbFileCreate">Select a GenBank flat file:</label></div><input type="file" id="gbFileCreate" class="fileInput formInput" name="gbFileCreate" accept=".gb" required></input><a class="fileExamp" id="gbFileCreateExamp" href="files/NEFC_F16-005_after.gb" title="Example of a post-edited GenBank flat file"><span class="fa fa-file"></span></a>'
         + '<br>'
         + '<button type="submit" id="createBut" class="formBut btn btn-primary" title="Click create a Sequin file for GenBank submittal"><span class="fa fa-arrow-circle-right"></span> Run</button>'
         + '<br>'
@@ -119,9 +119,9 @@ function load_page() {
       + '<div id="resourceInternalDiv">'
         + '<h5>Protocols<span class="fa fa-info-circle" data-toggle="tooltip" data-container="body" data-placement="auto" data-html="true" title="<p>Links to PDF\'s containing protocols for assembly and annotation of mitogenomes from raw sequence reads and submitting them to GenBank.</p>"></span></h5>'
         + '<div id="docDiv" class="resLinkDiv">'
-          + '<a class="resourceA" href="annotate/files/NEFC_Protocol-Mitogenome_Sequencing _Sept_2019.pdf" target="_blank" title="Click to download PDF"><span class="fa fa-file faResource"</span></a><p class="resourceP">Northeast Fishery Center mitogenome sequencing protocol</p>'
+          + '<a class="resourceA" href="files/NEFC_Protocol-Mitogenome_Sequencing _Sept_2019.pdf" target="_blank" title="Click to download PDF"><span class="fa fa-file faResource"</span></a><p class="resourceP">Northeast Fishery Center mitogenome sequencing protocol</p>'
           + '<br>'
-          + '<a class="resourceA" href="annotate/files/NEFC_Mitogenome_Genbank_Submittal_v2.pdf" target="_blank" title="Click to download PDF"><span class="fa fa-file faResource"</span></a><p class="resourceP">Northeast Fishery Center mitogenome annotation submittal protocol</p>'
+          + '<a class="resourceA" href="files/NEFC_Mitogenome_Genbank_Submittal_v2.pdf" target="_blank" title="Click to download PDF"><span class="fa fa-file faResource"</span></a><p class="resourceP">Northeast Fishery Center mitogenome annotation submittal protocol</p>'
         + '</div>'
         + '<br><br>'
         + '<h5>Contact Information<span class="fa fa-info-circle" data-toggle="tooltip" data-container="body" data-placement="auto" data-html="true" title="<p>Email addresses for questions and comments about protocols and the app .</p>"></span></h5>'
@@ -318,7 +318,9 @@ function tbl2asn(tmpForm) {
       var tmpData = {"filename": tmpName.replace(".gb", ""), "tmpSBT": fileSBT, "tmpFSA": fileFSA, "tmpGB": fileGB};
       $.ajax({
         method: "POST",
-        url: "http://174.55.94.160/tbl2asn/run",
+        url: "http://174.55.94.160:3414/run",
+        //url: "http://172.18.22.77:3414/run",
+        //url: "http://174.55.94.160/tbl2asn/run",
         data: tmpData,
         error: function(e) { console.log("AJAX Error: " + e); },
         success: function(result) { 
@@ -831,7 +833,7 @@ function startIntro() {
   intro.setOptions({
     steps: [
       //0
-      { intro: '<b>Welcome to the <span style="font-family:nebulous;color:orangered;font-weight:bold;">Mitogenome Annotation</span> app!</b><img src="images/dna.png" style="height:50px;display:block;margin:auto;"></img>This app is designed to assist with annotated mitogenome submissions to GenBank by standardizing annotation attribution and creating the final Sequin file.<br><br>This app builds upon annotation files created using the <a href="annotate/files/NEFC_Protocol-Mitogenome_Sequencing _Sept_2019.pdf" target="_blank">NEFC mitochondrial genome sequencing protocol</a>.' },
+      { intro: '<b>Welcome to the <span style="font-family:nebulous;color:orangered;font-weight:bold;">Mitogenome Annotation</span> app!</b><img src="images/dna.png" style="height:50px;display:block;margin:auto;"></img>This app is designed to assist with annotated mitogenome submissions to GenBank by standardizing annotation attribution and creating the final Sequin file.<br><br>This app builds upon annotation files created using the <a href="files/NEFC_Protocol-Mitogenome_Sequencing _Sept_2019.pdf" target="_blank">NEFC mitochondrial genome sequencing protocol</a>.' },
       //1
       { element: document.querySelector("#intro"), intro: "To access this guide at any time simply click on the 'Tutorial' link." },
       //2
@@ -901,7 +903,12 @@ function startIntro() {
     switch (this._currentStep) {
       case 1:
         d3.select("#intro").style("color","aqua");
+        d3.select(".header").classed("highZ", true);
+        break;
       case 2:
+        d3.select("#resources").style("color","aqua");
+        d3.select(".header").classed("highZ", true);
+        break;
       case 3:
       case 4:
       case 5:
@@ -966,7 +973,8 @@ function startIntro() {
 
 
   function revertIntro() {
-    d3.select("#intro").style("color", "");
+    d3.selectAll("#intro,#resources").style("color", "");
+    d3.select(".header").classed("highZ", false);
     $("#resetBut").click();
     $("#resetButCreate").click();
   }

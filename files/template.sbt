@@ -120,6 +120,13 @@ Seqdesc ::= user {
       data strs {
         "PRJNA633136"
       }
+    },
+    {
+      label str "BioSample",
+      num 1,
+      data strs {
+        "SAMN15185385"
+      }
     }
   }
 }

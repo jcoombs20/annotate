@@ -12,6 +12,11 @@ app.listen(3414);
 
 console.log("Running on 3414...");
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 app.get('/', function(req, res) { 
   res.send("Listening for calls"); 
 });

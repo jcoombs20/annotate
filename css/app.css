@@ -17,6 +17,10 @@ html, body {
   z-index: 1;
 }
 
+.header.highZ {
+  z-index: 9999999 !important;
+}
+
 #usfws {
   height: 125px;
   margin-top: 5px;
