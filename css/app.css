@@ -101,6 +101,10 @@ h5 {
   max-width: max-content;
 }
 
+.tooltip-inner ul {
+  text-align: left;
+}
+
 #headerTabs li {
   border: solid 2px #262c40;
   height: 50px;
